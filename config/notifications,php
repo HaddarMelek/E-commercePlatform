@@ -1,0 +1,47 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Notification Channel
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default notification channel that should be
+    | used to send notifications. By default, Laravel supports sending
+    | notifications via "mail", "database", "slack", and more.
+    |
+    */
+
+    'default' => env('NOTIFICATION_CHANNEL', 'database'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Notification Channels
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the notification channels that your application
+    | supports. You can specify the channels and their settings here.
+    |
+    */
+
+    'channels' => [
+
+        'mail' => [
+            'driver' => 'mail',
+        ],
+
+        'database' => [
+            'driver' => 'database',
+            'table' => 'notifications',
+        ],
+
+        'slack' => [
+            'driver' => 'slack',
+            'url' => env('SLACK_WEBHOOK_URL'),
+        ],
+
+
+    ],
+
+];
