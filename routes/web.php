@@ -32,9 +32,7 @@ use Illuminate\Support\Facades\Notification;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/pass', function () {
-    return view('home');
-});
+
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -61,7 +59,7 @@ Route::get('/buyer/index', [BuyerController::class, 'index'])
     Route::get('/buyer/orders', [BuyerController::class, 'orders'])->name('buyer.orders');
 
     Route::get('/order/{userId}', [OrderController::class, 'showOrder'])->name('buyer.showOrder');
-//buyer
+
 Route::get('/seller/dashboard', [SellerController::class, 'index'])
     ->name('seller.dashboard');
 
@@ -101,7 +99,7 @@ Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('orde
 Route::put('/orders/{order}/update', [OrderController::class, 'update'])->name('order.update');
 
 Route::patch('/orders/{id}/cancel', [OrderController::class, 'cancel'])->name('orders.cancel');
-//when adding admin function 
+
 Route::get('/orders', [OrderController::class, 'index'])->name('seller.orders');
 
 Route::get('seller/showOrders', [SellerController::class, 'showOrders'])->name('seller.showOrders');
